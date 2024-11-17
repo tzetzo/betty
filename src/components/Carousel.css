@@ -1,0 +1,53 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.images {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-column-gap: 10px;
+  width: min-content;
+  margin: 10px;
+}
+
+.images-hidden {
+  background: linear-gradient(transparent, grey, transparent);
+}
+
+.image {
+  border-radius: 10px;
+  vertical-align: bottom;
+  filter: drop-shadow(4px 4px 4px grey);
+  transition: opacity 1s;
+}
+
+.image:hover {
+  cursor: url(scroll.png), auto;
+  filter: drop-shadow(5px 5px 5px grey);
+  transform: scale(1.02);
+  transition: transform 0.3s;
+}
+
+.image:active {
+  transform: scale(1.02) translateY(3px);
+  filter: drop-shadow(3px 3px 3px grey);
+  transition: 0.3s;
+}
+
+.image-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading {
+  position: absolute;
+  color: #000;
+  width: 100%;
+  z-index: 100;
+  height: 100%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}

@@ -1,0 +1,25 @@
+.App {
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+header, main, footer {
+  grid-column: 1 / 4;
+}
+
+header {
+  align-self: self-start;
+  padding: 10px;
+}
+
+main > div {
+  width: 80vw;
+  text-align: center;
+}
+
+footer {
+  align-self: self-end;
+  padding: 10px;
+}
