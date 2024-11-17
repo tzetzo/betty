@@ -6,19 +6,22 @@ import Carousel from "./components/Carousel";
 import Menu from "./components/Menu";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
+  const [error, setError] = useState("");
   const [input, setInput] = useState({ page: 1, limit: 10, scale: 5 });
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
+      setError("");
       try {
-        const { data: response } = await axios.get(
+        const { data } = await axios.get(
           `https://picsum.photos/v2/list?page=${input.page}&limit=${input.limit}`
         );
-        setData(response);
+        setData(data);
       } catch (error) {
+        setError(error.message);
         console.error(error.message);
       }
       setLoading(false);
@@ -36,7 +39,8 @@ function App() {
 
       <main>
         {loading && <div>Loading data...</div>}
-        {!loading && (
+        {!loading && error && <div>{error}</div>}
+        {!loading && !error && (
           <div>
             <Carousel data={data} scale={input.scale} />
           </div>

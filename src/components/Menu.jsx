@@ -49,7 +49,7 @@ const Menu = ({ input, setInput }) => {
 };
 
 Menu.propTypes = {
-  input: PropTypes.number,
+  input: PropTypes.object,
   setInput: PropTypes.func,
 };
 
