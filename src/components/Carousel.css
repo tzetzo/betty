@@ -24,7 +24,7 @@
 }
 
 .image:hover {
-  cursor: url(./assets/scroll.png), auto;
+  cursor: url(/assets/scroll.png), auto;
   filter: drop-shadow(5px 5px 5px grey);
   transform: scale(1.02);
   transition: transform 0.3s;
